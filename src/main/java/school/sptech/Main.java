@@ -26,13 +26,20 @@ public class Main {
 
         do {
             Integer escolha;
+            Double porcentagem;
 
             System.out.println("Escolha uma das opções abaixo:");
             System.out.println("1 - Ordenados por Data/Hora");
             System.out.println("2 - Ordenados por porcentagem de CPU");
             System.out.println("3 - Ordenados por porcentagem de RAM");
             System.out.println("4 - Ordenados por porcentagem de Disco");
-            System.out.println("5 - todos os dados");
+            System.out.println("5 - ID Totem, data/hora e CPU");
+            System.out.println("6 - ID Totem, data/hora e RAM");
+            System.out.println("7 - ID Totem, data/hora e Disco");
+            System.out.println("8 - CPU acima de ...%");
+            System.out.println("9 - RAM acima de ...%");
+            System.out.println("10 - Disco acima de ...%");
+            System.out.println("11 - todos os dados");
             escolha = sc.nextInt();
 
             switch (escolha) {
@@ -53,14 +60,48 @@ public class Main {
                     logGerenciador.ordenarPorDisco();
                     break;
                 case 5:
+                    System.out.println("=== ID Totem, data/hora e CPU ===");
+                    logGerenciador.mostrarDataECpu();
+                    break;
+                case 6:
+                    System.out.println("=== ID Totem, data/hora e RAM ===");
+                    logGerenciador.mostrarDataERam();
+                    break;
+                case 7:
+                    System.out.println("=== ID Totem, data/hora e Disco ===");
+                    logGerenciador.mostrarDataEDisco();
+                    break;
+                case 8:
+                    System.out.println("=== CPU acima de ...% ===");
+                    System.out.println("Digite a porcentagem para verificar capturas elevadas:");
+                    porcentagem = sc.nextDouble();
+
+                    logGerenciador.mostrarLogsCpuAcimaDe(porcentagem);
+                    break;
+                case 9:
+                    System.out.println("=== RAM acima de ...% ===");
+                    System.out.println("Digite a porcentagem para verificar capturas elevadas:");
+                    porcentagem = sc.nextDouble();
+
+                    logGerenciador.mostrarLogsRamAcimaDe(porcentagem);
+                    break;
+                case 10:
+                    System.out.println("=== Disco acima de ...% ===");
+                    System.out.println("Digite a porcentagem para verificar capturas elevadas:");
+                    porcentagem = sc.nextDouble();
+
+                    logGerenciador.mostrarLogsDiscoAcimaDe(porcentagem);
+                    break;
+                case 11:
                     System.out.println("=== Captura de todos os dados ===");
                     logGerenciador.mostrarTodosLogs();
                     break;
                 default:
+                    System.out.println("# Por favor, Digite um número compatível com as escolhas feitas acima");
                     break;
             }
 
-            System.out.println("\nVocê deseja ver outras informações de forma diferente que podemos te mostrar?\n");
+            System.out.println("\nVocê deseja ver outras informações de forma diferente que podemos te mostrar? [sim / nao]\n");
             continuar = scannerLine.nextLine();
 
         } while(continuar.equalsIgnoreCase("sim"));
