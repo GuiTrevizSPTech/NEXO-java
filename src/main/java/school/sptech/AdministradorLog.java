@@ -41,6 +41,10 @@ public class AdministradorLog {
                 logs.set(indiceMenor, temp);
             }
         }
+
+        for (Log log : logs) {
+            System.out.println(log);
+        }
     }
         //Adiciona ordenação selectionSort nos métodos de ordenação
     private void selectionSort(ArrayList<Log> logs, String componente) {
