@@ -87,14 +87,14 @@ public class AdministradorLog {
     // Mostrar somente ID, data e RAM
     public void mostrarDataERam() {
         for (Log log : logs) {
-            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | CPU: " + log.getUsoRAM() + "%");
+            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | RAM: " + log.getUsoRAM() + "%");
         }
     }
 
     // Mostrar somente ID, data e Disco
     public void mostrarDataEDisco() {
         for (Log log : logs) {
-            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | CPU: " + log.getUsoDisco() + "%");
+            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | Disco: " + log.getUsoDisco() + "%");
         }
     }
 
