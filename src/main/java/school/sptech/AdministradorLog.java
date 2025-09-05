@@ -61,7 +61,6 @@ public class AdministradorLog {
         for (int i = 0; i < logs.size() - 1; i++) {
             int indiceMenor = i;
             for (int j = i + 1; j < logs.size(); j++) {
-                System.out.println(componente+logs.get(i).executar(componente));
                 if (logs.get(i).executar(componente) < logs.get(indiceMenor).executar(componente)) {
                     indiceMenor = j;
                 }
