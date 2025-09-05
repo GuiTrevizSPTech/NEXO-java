@@ -1,5 +1,7 @@
 package school.sptech;
 
+import java.lang.reflect.Method;
+
 public class Log {
     private String identificadorTotem;
     private String dataHora;
@@ -34,9 +36,20 @@ public class Log {
     }
 
     public String toString() {
-        return "Data: " + dataHora +
+        return "ID: " + identificadorTotem +
+                " | Data: " + dataHora +
                 " | CPU: " + usoCPU + "%" +
                 " | RAM: " + usoRAM + "%" +
                 " | Disco: " + usoDisco + "%";
+    }
+
+    public Double executar(String comando){
+        try{
+            Method metodo = this.getClass().getMethod(comando);
+            return (Double) metodo.invoke(this);
+
+        }catch (Exception e){
+            return  0.0;
+        }
     }
 }

@@ -4,9 +4,9 @@ public class Main {
     public static void main(String[] args) {
         AdministradorLog logGerenciador = new AdministradorLog();
 
-        logGerenciador.adicionarLog(new Log("2025-09-04 19:00", 30.5, 50.2, 70.1));
-        logGerenciador.adicionarLog(new Log("2025-09-04 19:10", 80.1, 60.5, 55.2));
-        logGerenciador.adicionarLog(new Log("2025-09-04 19:05", 45.8, 30.0, 90.3));
+        logGerenciador.adicionarLog(new Log("Totem0011A","2025-09-04 19:00", 30.5, 50.2, 70.1));
+        logGerenciador.adicionarLog(new Log("Totem0012A","2025-09-04 19:10", 80.1, 60.5, 55.2));
+        logGerenciador.adicionarLog(new Log("Totem0013A","2025-09-04 19:05", 45.8, 30.0, 90.3));
 
         System.out.println("=== Todos os Logs ===");
         logGerenciador.mostrarTodosLogs();

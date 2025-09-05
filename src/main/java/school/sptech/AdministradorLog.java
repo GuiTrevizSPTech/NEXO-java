@@ -43,10 +43,26 @@ public class AdministradorLog {
 
     // Selection sort para ordenar por uso de CPU
     public void ordenarPorCPU() {
+        selectionSort(logs, "getUsoCPU");
+//        for (int i = 0; i < logs.size() - 1; i++) {
+//            int indiceMenor = i;
+//            for (int j = i + 1; j < logs.size(); j++) {
+//                if (logs.get(j).getUsoCPU() < logs.get(indiceMenor).getUsoCPU()) {
+//                    indiceMenor = j;
+//                }
+//            }
+//            Log temp = logs.get(i);
+//            logs.set(i, logs.get(indiceMenor));
+//            logs.set(indiceMenor, temp);
+//        }
+    }
+
+    public void selectionSort(ArrayList<Log> logs, String componente) {
         for (int i = 0; i < logs.size() - 1; i++) {
             int indiceMenor = i;
             for (int j = i + 1; j < logs.size(); j++) {
-                if (logs.get(j).getUsoCPU() < logs.get(indiceMenor).getUsoCPU()) {
+                System.out.println(componente+logs.get(i).executar(componente));
+                if (logs.get(i).executar(componente) < logs.get(indiceMenor).executar(componente)) {
                     indiceMenor = j;
                 }
             }
@@ -54,42 +70,46 @@ public class AdministradorLog {
             logs.set(i, logs.get(indiceMenor));
             logs.set(indiceMenor, temp);
         }
+
     }
 
     // Selection sort para ordenar por uso de RAM
     public void ordenarPorRAM() {
-        for (int i = 0; i < logs.size() - 1; i++) {
-            int indiceMenor = i;
-            for (int j = i + 1; j < logs.size(); j++) {
-                if (logs.get(j).getUsoRAM() < logs.get(indiceMenor).getUsoRAM()) {
-                    indiceMenor = j;
-                }
-            }
-            Log temp = logs.get(i);
-            logs.set(i, logs.get(indiceMenor));
-            logs.set(indiceMenor, temp);
-        }
+
+        selectionSort(logs, "getUsoRAM");
+//        for (int i = 0; i < logs.size() - 1; i++) {
+//            int indiceMenor = i;
+//            for (int j = i + 1; j < logs.size(); j++) {
+//                if (logs.get(j).getUsoRAM() < logs.get(indiceMenor).getUsoRAM()) {
+//                    indiceMenor = j;
+//                }
+//            }
+//            Log temp = logs.get(i);
+//            logs.set(i, logs.get(indiceMenor));
+//            logs.set(indiceMenor, temp);
+//        }
     }
 
     // Selection sort para ordenar por uso de Disco
     public void ordenarPorDisco() {
-        for (int i = 0; i < logs.size() - 1; i++) {
-            int indiceMenor = i;
-            for (int j = i + 1; j < logs.size(); j++) {
-                if (logs.get(j).getUsoDisco() < logs.get(indiceMenor).getUsoDisco()) {
-                    indiceMenor = j;
-                }
-            }
-            Log temp = logs.get(i);
-            logs.set(i, logs.get(indiceMenor));
-            logs.set(indiceMenor, temp);
-        }
+        selectionSort(logs, "getUsoDisco");
+//        for (int i = 0; i < logs.size() - 1; i++) {
+//            int indiceMenor = i;
+//            for (int j = i + 1; j < logs.size(); j++) {
+//                if (logs.get(j).getUsoDisco() < logs.get(indiceMenor).getUsoDisco()) {
+//                    indiceMenor = j;
+//                }
+//            }
+//            Log temp = logs.get(i);
+//            logs.set(i, logs.get(indiceMenor));
+//            logs.set(indiceMenor, temp);
+//        }
     }
 
     // Mostrar somente data e CPU
     public void mostrarDataECpu() {
         for (Log log : logs) {
-            System.out.println("Data: " + log.getDataHora() + " | CPU: " + log.getUsoCPU() + "%");
+            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | CPU: " + log.getUsoCPU() + "%");
         }
     }
 
