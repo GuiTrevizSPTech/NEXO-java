@@ -84,6 +84,20 @@ public class AdministradorLog {
         }
     }
 
+    // Mostrar somente ID, data e RAM
+    public void mostrarDataERam() {
+        for (Log log : logs) {
+            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | CPU: " + log.getUsoRAM() + "%");
+        }
+    }
+
+    // Mostrar somente ID, data e Disco
+    public void mostrarDataEDisco() {
+        for (Log log : logs) {
+            System.out.println("ID: "+ log.getIdentificadorTotem() + " | Data: " + log.getDataHora() + " | CPU: " + log.getUsoDisco() + "%");
+        }
+    }
+
     // Mostrar logs com CPU acima de um limite
     public void mostrarLogsCpuAcimaDe(double limite) {
         boolean encontrou = false;
