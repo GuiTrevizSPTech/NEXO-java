@@ -23,7 +23,6 @@ public class Main {
 
         System.out.println("\n=== Ordenando por CPU ===");
         logGerenciador.ordenarPorCPU();
-        logGerenciador.mostrarTodosLogs();
 
         System.out.println("\n=== Logs com CPU > 50% ===");
         logGerenciador.mostrarLogsCpuAcimaDe(50);
