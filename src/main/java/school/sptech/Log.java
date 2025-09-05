@@ -1,17 +1,21 @@
 package school.sptech;
 
 public class Log {
+    private String identificadorTotem;
     private String dataHora;
     private double usoCPU;
     private double usoRAM;
     private double usoDisco;
 
-    public Log(String dataHora, double usoCPU, double usoRAM, double usoDisco) {
+    public Log(String identificadorTotem, String dataHora, double usoCPU, double usoRAM, double usoDisco) {
+        this.identificadorTotem = identificadorTotem;
         this.dataHora = dataHora;
         this.usoCPU = usoCPU;
         this.usoRAM = usoRAM;
         this.usoDisco = usoDisco;
     }
+
+    public String getIdentificadorTotem() { return identificadorTotem; }
 
     public String getDataHora() {
         return dataHora;
