@@ -1,8 +1,15 @@
 package school.sptech;
 
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Scanner scannerLine = new Scanner(System.in);
         AdministradorLog logGerenciador = new AdministradorLog();
+
+        String continuar;
 
         logGerenciador.adicionarLog(new Log("Totem0011A","2025-09-04 19:00", 82.5, 50.2, 70.1));
         logGerenciador.adicionarLog(new Log("Totem0011A","2025-09-04 19:10", 76.5, 54.2, 78.6));
@@ -17,18 +24,46 @@ public class Main {
         logGerenciador.adicionarLog(new Log("Totem0013A","2025-09-04 19:00", 94.8, 30.0, 90.6));
         logGerenciador.adicionarLog(new Log("Totem0013A","2025-09-04 19:20", 81.7, 30.0, 90.3));
 
+        do {
+            Integer escolha;
 
-        System.out.println("=== Todos os Logs ===");
-        logGerenciador.mostrarTodosLogs();
+            System.out.println("Escolha uma das opções abaixo:");
+            System.out.println("1 - Ordenados por Data/Hora");
+            System.out.println("2 - Ordenados por porcentagem de CPU");
+            System.out.println("3 - Ordenados por porcentagem de RAM");
+            System.out.println("4 - Ordenados por porcentagem de Disco");
+            System.out.println("5 - todos os dados");
+            escolha = sc.nextInt();
 
-        System.out.println("\n=== Ordenando por CPU ===");
-        logGerenciador.ordenarPorCPU();
+            switch (escolha) {
+                case 1:
+                    System.out.println("=== Capturas ordenadas por Data/Hora ===");
+                    logGerenciador.ordenarPorData();
+                    break;
+                case 2:
+                    System.out.println("=== Capturas ordenadas por porcentagem de CPU ===");
+                    logGerenciador.ordenarPorCPU();
+                    break;
+                case 3:
+                    System.out.println("=== Capturas ordenadas por porcentagem de RAM ===");
+                    logGerenciador.ordenarPorRAM();
+                    break;
+                case 4:
+                    System.out.println("=== Capturas ordenadas por Porcentagem de Disco ===");
+                    logGerenciador.ordenarPorDisco();
+                    break;
+                case 5:
+                    System.out.println("=== Captura de todos os dados ===");
+                    logGerenciador.mostrarTodosLogs();
+                    break;
+                default:
+                    break;
+            }
 
-        System.out.println("\n=== Logs com CPU > 50% ===");
-        logGerenciador.mostrarLogsCpuAcimaDe(50);
+            System.out.println("\nVocê deseja ver outras informações de forma diferente que podemos te mostrar?\n");
+            continuar = scannerLine.nextLine();
 
-        System.out.println("\n=== Mostrar somente Data e CPU ===");
-        logGerenciador.mostrarDataECpu();
+        } while(continuar.equalsIgnoreCase("sim"));
     }
 
 }

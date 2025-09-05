@@ -43,7 +43,7 @@ public class AdministradorLog {
         }
     }
         //Adiciona ordenação selectionSort nos métodos de ordenação
-    public void selectionSort(ArrayList<Log> logs, String componente) {
+    private void selectionSort(ArrayList<Log> logs, String componente) {
         for (int i = 0; i < logs.size() - 1; i++) {
             int indiceMenor = i;
             for (int j = i + 1; j < logs.size(); j++) {
