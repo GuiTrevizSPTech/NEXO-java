@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="nexo-java:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/nexo_java_jar</output-path>
+    <root id="archive" name="nexo-java.jar">
+      <element id="module-output" name="nexo-java" />
+      <element id="module-test-output" name="nexo-java" />
+    </root>
+  </artifact>
+</component>
